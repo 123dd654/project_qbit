@@ -4,22 +4,20 @@ import { useRouter } from "next/navigation";
 import Lottie from "react-lottie-player";
 import completeAnimation from "/public/complete.json";
 import { useBag } from "@/context/BagContext";
+import { useEffect } from "react";
 
 export default function Complete() {
   const router = useRouter();
-  const { finalizeOrder } = useBag();
+  const { finalizeOrder, result } = useBag();
 
-  // ✅ 메뉴 보기 눌렀을 때 리셋 + 이동
-  const handleMenuPage = () => {
-    finalizeOrder();   // 여기서 리셋
-    router.push("/main");
-  };
+  // ✅ 화면 진입 후 bag 초기화 – setTimeout으로 버튼 정상 작동 보장
+  useEffect(() => {
+    const timer = setTimeout(() => finalizeOrder(), 0);
+    return () => clearTimeout(timer);
+  }, [finalizeOrder]);
 
-  // ✅ 주문내역 보기 눌렀을 때 리셋 + 이동
-  const handleResultPage = () => {
-    finalizeOrder();   // 여기서 리셋
-    router.push("/result");
-  };
+  const handleMenuPage = () => router.push("/main");
+  const handleResultPage = () => router.push("/result");
 
   return (
     <div className="container">
