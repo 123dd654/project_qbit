@@ -8,10 +8,14 @@ QR 테이블 오더를 구현한 시스템 포트폴리오 입니다.
 
 ## 사이트 QR
 <img width="300" height="290" alt="Image" src="https://github.com/user-attachments/assets/f5caacc7-eebc-403f-a1cd-08223d26184f" />
+<br /><br />
+- QR 코드를 스캔하면 바로 메뉴에 접속하고 주문할 수 있는 웹 서비스입니다.<br />
+- 모바일 화면 기준으로 UI가 최적화되어 있어 스마트폰에서 확인하는 것을 추천드립니다.
 
 ## 실제 테스트 영상
 
-
+![Image](https://github.com/user-attachments/assets/c7c92cf6-e350-41d5-ac70-7ad0c32a7e0d)
+![Image](https://github.com/user-attachments/assets/9195fb47-8e7a-4218-8f03-df4815376565)
 
 ## 사용 스택
 
