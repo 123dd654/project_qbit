@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+// setting
+@import "./setting/reset";
+@import "./setting/root";
+@import "./setting/mixin";
+@import "./setting/common";
+
+// common
+@import "./components/line";
+
+//main
+@import "./main/tabmenu";
+@import "./main/storeinfo";
+@import "./main/menuinfo";
+@import "./main/menuitem";
+
+//result
+@import "./result/basket";
+
+//detail
+@import "./detail/detail_menu.scss";
+
+//bag
+@import "./bag/bag";
+
+// complete
+@import "./complete/complete";
+
+// login
+@import "./login/login";
+
+//admin
+@import "./admin/admin.scss";  

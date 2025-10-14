@@ -1,0 +1,413 @@
+// --------------------------------------------
+@keyframes bounce{
+    to{
+        transform: translateY(-10px);
+    }
+}
+.randing_page_wrapper  {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--greyscale-color-000);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    img {
+        width: 24vw;
+        object-fit: contain;
+    }
+    .firtst_loading{
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        @for $i from 1 through 5 {
+            span:nth-child(#{$i}) {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50px;
+                background-color: var(--main-color-500);
+                animation: bounce 0.6s cubic-bezier(0, 0, 0.18, 0.99) infinite alternate;
+                animation-delay: ($i - 1) * 0.1s; // 각 span에 지연 시간 추가
+            }
+        }
+    }
+}
+
+// --------------------------------------------
+
+.container {
+    width: 100%;
+    padding: 0px 24px;
+}
+
+
+input[type=checkbox] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    outline: none;
+    border: 0px;
+    display: block;
+    background-image: url('../../images/icons/check_default.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    &:checked {
+        background-image: url('../../images/icons/check_selected.svg');
+    }
+    &:disabled {
+        background-image: url('../../images/icons/check_disabled.svg') !important;
+        cursor: default !important;
+    }
+}
+input[type=radio] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    outline: none;
+    border: 0px;
+    display: block;
+    background-image: url('../../images/icons/check_default.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    &:checked {
+        background-image: url('../../images/icons/check_selected.svg');
+    }
+    &:disabled {
+        background-image: url('../../images/icons/check_disabled.svg') !important;
+        cursor: default !important;
+    }
+}
+.button__count__box {
+    position: relative;
+    width: 30px;
+    height: 26px;
+    border-radius: 8px;
+    background-color: var(--greyscale-color-000);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--main-color-500);
+}
+.main__button {
+    min-width: fit-content;
+    width: 100%;
+    height: 56px;
+    @include flex(row, center, center, 10px);
+    padding: 14px 16px;
+    background-color: var(--main-color-500);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--greyscale-color-000);
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.main__button.disabled {
+  background-color: #ccc; 
+  cursor: not-allowed;
+}
+
+.sub__button {
+    width: 100%;
+    min-width: fit-content;
+    height: 56px;
+    @include flex(row, center, center, 10px);
+    padding: 14px 16px;
+    background-color: var(--greyscale-color-200);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--greyscale-color-500);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.call__button {
+    width: 88px;
+    height: 32px;
+    @include flex(row, center, center, 10px);
+    padding: 14px 16px;
+    border-radius: 20px;
+    background-color: var(--greyscale-color-000);
+    border: 1px solid var(--main-color-500);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--main-color-500);
+    white-space: nowrap;
+    cursor: pointer;
+    display: none;
+}
+.etc__button__main {
+    min-width: 65px;
+    height: 36px;
+    @include flex(row, center, center, 10px);
+    padding: 14px 13px;
+    border-radius: 8px;
+    background-color: var(--greyscale-color-000);
+    box-sizing: border-box;
+    border: 1px solid var(--main-color-500);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--main-color-500);
+}
+.etc__button__sub {
+    min-width: 65px;
+    height: 36px;
+    @include flex(row, center, center, 10px);
+    padding: 14px 13px;
+    border-radius: 8px;
+    background: var(--greyscale-color-200);
+}
+.etc__button__text {
+    @include flex(row, center);
+    padding: 0px;
+    gap: 4px;
+    &.color__main {
+        color: var(--main-color-500);
+        img {
+            fill: var(--main-color-500);
+        }
+    }
+}
+.button__disabled {
+    background-color: var(--greyscale-color-200) !important;
+    color: var(--greyscale-color-300) !important;
+    cursor: default !important;
+}
+
+
+.top__header {
+    width: 100%;
+    height: 50px;
+    padding: 0px 24px;
+    @include flex(row, center, space-between);
+    position: sticky;
+    top: 0;          
+    background: white; 
+    z-index: 120;       
+
+    .right__action__buttons {
+        width: fit-content;
+        height: fit-content;
+        @include flex(row, center, flex-end, 8px);
+        margin-left: auto;
+        a {
+            position: relative;
+            .bag_quantity {
+                position: absolute;
+                left: 11px;
+                top: 11px;
+                border-radius: 100%;
+                width: 13px;
+                min-width: 13px;
+                min-height: 13px;
+                height: 13px;
+                background-color: var(--main-color-500);
+                span {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                    width: fit-content;
+                    height: 12px;
+                    font-size: 8px;
+                    font-weight: bold;
+                    text-align: center;
+                    letter-spacing: -0.02em;
+                    color: var(--greyscale-color-000);
+                }
+            }
+        }
+    }
+}
+.bottom__wrapper {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 120px;
+    @include flex(row, flex-end, flex-end, 8px);
+    padding-bottom: 24px;
+    background: linear-gradient(1deg, #FFFFFF 69%, rgba(255, 255, 255, 0) 96%);
+}
+.quantity__wrapper {
+    width: fit-content;
+    gap: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    input {
+        appearance: none;
+        width: 34px;
+        height: 36px;
+        padding: 6px 2px;
+        border: 0px;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: var(--greyscale-color-600);
+    }
+    .quantity__button {
+        width: 36px;
+        height: 36px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        &.remove {
+            background-image: url('../../images/icons/quantity_remove.svg');
+            &.disabled {
+                cursor: default;
+                background-image: url('../../images/icons/quantity_remove_disabled.svg');
+            }
+        }
+        &.add {
+            background-image: url('../../images/icons/quantity_add.svg');
+        }
+    }
+}
+
+.essential_box{
+    width: 31px;
+    height: 19px;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: var(--main-color-200);
+    color: var(--main-color-500)
+}
+
+.select_box{
+    width: 31px;
+    height: 19px;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: var(--sub-color-200);
+    color: var(--sub-color-600)
+}
+
+.icon-24 {
+    @include icon-size(24px);
+    cursor: pointer;
+    &-arrow-down {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_down.svg');
+    }
+
+    &-arrow-left {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_left.svg');
+    }
+
+    &-arrow-right {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_right.svg');
+    }
+
+    &-arrow-up {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_up.svg');
+    }
+
+    &-refresh {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_refresh.svg');
+    }
+
+    &-plus {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_add.svg');
+    }
+
+    &-minus {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_less.svg');
+    }
+
+    &-like {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_like.svg');
+    }
+
+    &-like-active {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_like_active.svg');
+    }
+
+    &-close {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_close.svg');
+    }
+
+    &-delete {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_delete.svg');
+    }
+
+    &-download {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_download.svg');
+    }
+
+    &-search {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_search.svg');
+    }
+
+    &-trash {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_trash.svg');
+    }
+
+    &-setting {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_setting.svg');
+    }
+
+    &-menu {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_menu.svg');
+    }
+
+    &-bag {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_bag.svg');
+    }
+
+    &-receipt {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_receipt.svg');
+    }
+
+    &-logout {
+        @extend .icon-24;
+        background-image: url('../../images/icons/ic24_logout.svg');
+    }
+}

@@ -1,0 +1,191 @@
+.login__wrapper {
+  width: 100%;
+  //   height: 100vh;
+  height: calc(100vh - 50px);
+  @include flex(column, center, center);
+  overflow-y: scroll; // 세로 스크롤만 허용
+
+  .login__container {
+    width: 480px;
+    height: 100vh;
+    @include flex(column, center);
+    margin-top: 80px;
+  }
+
+  .login__logo_wrap {
+    width: 100%;
+    margin-bottom: 75px;
+    @include flex(column, center, center);
+  }
+
+  form {
+    width: 100%;
+    @include flex(column, center, center);
+
+    .login__info {
+      width: 327px;
+      .id__wrap {
+        @include flex(column, left, center);
+
+        .login_id,
+        .login_password {
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 22px;
+          letter-spacing: -0.02em;
+          color: var(--greyscale-color-600);
+          margin-top: 32px;
+        }
+
+        input {
+          width: 100%;
+          height: 48px;
+          padding: 10px 16px;
+          border-radius: 8px;
+          box-sizing: border-box;
+          border: 1px solid var(--greyscale-color-200);
+          opacity: 1;
+          margin-top: 8px;
+
+          &::placeholder {
+            @include flex(row, center, center);
+            font-size: 16px;
+            color: var(--system-color-grey);
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            font-weight: normal;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .login__btn {
+      @include flex(column, center, center);
+
+      .main__button {
+        opacity: 1;
+        line-height: 26px;
+        margin-bottom: 16px;
+        margin-top: 32px;
+      }
+
+      .signup__button {
+        width: 100%;
+        height: 48px;
+        padding: 11px 16px;
+        border-radius: 8px;
+        opacity: 1;
+        background-color: var(--greyscale-color-000);
+        border: 1px solid var(--main-color-500);
+        color: var(--main-color-500);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        letter-spacing: -0.02em;
+        cursor: pointer;
+      }
+
+      .login__find {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        color: var(--greyscale-color-500);
+        border-bottom: 1px solid var(--greyscale-color-500);
+        cursor: pointer;
+        margin-top: 16px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .id__save,
+    .auto__login {
+      @include flex(center, center);
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 24px;
+      letter-spacing: -0.02em;
+      color: var(--greyscale-color-500);
+    }
+  }
+
+  .social__login {
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 56px;
+
+    ul {
+      @include flex(row, center, center);
+    }
+  }
+
+  .naver__login {
+    height: 56px;
+    width: 56px;
+    border-radius: 50px;
+    background-color: #03cf5d;
+    margin-right: 32px;
+    position: relative;
+
+    img {
+      position: absolute;
+      border-radius: 50px;
+    }
+  }
+
+  .kakao__login {
+    height: 56px;
+    width: 56px;
+    border-radius: 50px;
+    background-color: #fee500;
+    position: relative;
+
+    img {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      @include flex(null, cneter, cneter);
+      margin: 16px;
+    }
+  }
+
+  .login__footer {
+    width: 100%;
+    border-top: 1px solid var(--greyscale-color-100);
+
+    @include flex(column, center, center);
+
+    .footer__call {
+      margin-top: 16px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.02em;
+      color: var(--greyscale-color-400);
+    }
+
+    .footer__time {
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: -0.02em;
+      color: var(--greyscale-color-300);
+    }
+
+    .login__copy {
+      margin-top: 95px;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: -0.02em;
+      color: var(--greyscale-color-300);
+      opacity: 1;
+      bottom: 0;
+    }
+  }
+
+  // 웹킷 브라우저에서 스크롤바 숨기기
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

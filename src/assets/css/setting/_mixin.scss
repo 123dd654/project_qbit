@@ -1,0 +1,90 @@
+@mixin flex($d: null, $a: null, $j: null, $g: null, $w: null){
+    display: flex;
+    @if $d != null {
+        flex-direction: $d;
+    }
+    @if $a != null {
+        align-items: $a;
+    }
+    @if $j != null {
+        justify-content: $j;
+    }
+    @if $g != null {
+        gap: $g;
+    }
+    @if $w != null {
+        flex-wrap: $w;
+    }
+}
+@mixin bg($url, $p: null, $r: null, $s: null) {
+    background-image: url($url);
+    @if $p != null {
+        background-position: $p;
+    } @else {
+        background-position: center;
+    }
+
+    @if $r != null {
+        background-repeat: $r;
+    } @else {
+        background-repeat: no-repeat;
+    }
+
+    @if $s != null {
+        background-size: $s;
+    } @else {
+        background-size: cover;
+    }
+}
+@mixin position-a($t: null, $l: null, $r: null, $b: null) {
+    position: absolute;
+
+    @if $t != null {
+        top: $t;
+    }
+
+    @if $l != null {
+        left: $l;
+    }
+
+    @if $r != null {
+        right: $r;
+    }
+
+    @if $b != null {
+        bottom: $b;
+    }
+}
+@mixin position-f($t: null, $l: null, $r: null, $b: null) {
+    position: fixed;
+
+    @if $t != null {
+        top: $t;
+    }
+
+    @if $l != null {
+        left: $l;
+    }
+
+    @if $r != null {
+        right: $r;
+    }
+
+    @if $b != null {
+        bottom: $b;
+    }
+}
+
+@mixin icon-size($size) {
+    width: $size;
+    min-width: $size;
+    max-width: $size;
+    height: $size;
+    min-height: $size;
+    max-height: $size;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    font-style: normal;
+}

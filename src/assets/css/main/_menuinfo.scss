@@ -1,0 +1,16 @@
+// styles/Menu.scss
+.menu {
+  width: 100%;
+  margin: 32px 0;
+
+  .menu-title {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    color: var(--greyscale-color-500);
+  }
+}
+
+.last-menu {
+  padding-bottom: 120px;
+}

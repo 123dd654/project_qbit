@@ -1,0 +1,47 @@
+.container.store_fixed{
+  position: sticky;
+  top: 50px;           /* store_fixed 높이만큼 띄워주기 */
+  z-index: 110;
+  background: #fff;    /* 배경 필수 */
+  height: 60px;  
+}
+
+.store_info {
+  width: 100%;
+  //   min-width: 327px;
+  height: 52px;
+  @include flex(null, null, space-between, null, null);
+  margin: 24px 0 24px 0;
+  
+
+  .store_left {
+    position: relative;
+    
+    .store_info_name {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 24px;
+      color: var(--greyscale-color-600);
+      letter-spacing: -0.02em;
+    }
+
+    .watch_together {
+      @include position-a;
+      left: 0;
+      top: 32px;
+      font-size: 14px;
+      font-weight: normal;
+      color: var(--greyscale-color-400);
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .store_right {
+    .store_table {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--greyscale-color-300);
+      letter-spacing: -0.02em;
+    }
+  }
+}
